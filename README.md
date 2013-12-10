@@ -24,7 +24,7 @@ The script can be configured through two options:
 
 * plugins.var.ruby.psound.player: software used to play a sound
   (default: aplay).
-* plugins.var.ruby.psound.sound_file: path to the sound file to play
+* plugins.var.ruby.psound.sound\_file: path to the sound file to play
   (default: unset).
 
 ## ARGUMENTS
@@ -46,5 +46,6 @@ The script implements three actions:
 
 ## REFERENCES
 
-http://www.weechat.org/files/doc/stable/weechat_scripting.en.html
-http://www.weechat.org/files/doc/stable/weechat_plugin_api.en.html
+http://www.weechat.org/files/doc/stable/weechat\_scripting.en.html
+
+http://www.weechat.org/files/doc/stable/weechat\_plugin\_api.en.html
