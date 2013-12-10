@@ -14,14 +14,16 @@ require 'shellwords'
 # Information for script registration.
 NAME        = 'psound'
 AUTHOR      = 'grim7reaper'
-VERSION     = '1.0.0'
+VERSION     = '1.1.0'
 LICENSE     = 'BSD 3-Clause'
 DESC        = 'Play a soundfile for incoming messages'
 SHUTDOWN_FN = ''
 CHARSET     = '' # UTF-8 is default charset.
 
 # Information about the script use.
-ARGS = [ 'test', '                        on|off [buffer]' ].join("\n")
+ARGS = [ 'test',
+         '                        on|off [buffer]',
+         '                        list' ].join("\n")
 ARGS_DESC = "Options:\n"                                                   \
             "player        software used to play a sound.\n"               \
             "sound_file    path to the sound file to play.\n"              \
@@ -30,6 +32,7 @@ ARGS_DESC = "Options:\n"                                                   \
             "test          Try to play `sound_file` with `player`\n"       \
             "on  [buffer]  Enable sound notification for `buffer`.\n"      \
             "off [buffer]  Disable sound notification for `buffer`.\n"     \
+            "list          Print the list of muted buffers.\n"             \
             "\n"                                                           \
             "By default, sound notifications is enabled for all channel "  \
             "buffers.\n"
@@ -40,7 +43,8 @@ ARGS_DESC = "Options:\n"                                                   \
 
 COMPLETION = 'test'                        \
              ' || on %(buffers_names)'     \
-             ' || off %(buffers_names)'
+             ' || off %(buffers_names)'    \
+             ' || list'
 
 # Default settings.
 SETTINGS = { 'player'     => 'aplay',
@@ -107,6 +111,17 @@ def play_sound
 end
 
 
+# Print the list of muted buffers.
+def print_muted_buffers
+  if $muted_buffers.empty?
+    Weechat.print('', 'No muted buffer.')
+  else
+    prefix = $muted_buffers.size == 1 ? 'Muted buffer' : 'Muted buffers'
+    Weechat.print('', "#{prefix}: #{$muted_buffers.to_a.join(', ')}")
+  end
+end
+
+
 # Callback called when a message is printed.
 #
 # @param data      [String] pointer.
@@ -153,6 +168,8 @@ def parse_cmd(data, buffer, args)
     when 'off'
       buffer = args.size > 1 ? args[1] : current_buffer
       $muted_buffers.add?(buffer)
+    when 'list'
+      print_muted_buffers()
     else
       print_error("Unknown command #{args.first}")
       return Weechat::WEECHAT_RC_ERROR

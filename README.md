@@ -1,5 +1,7 @@
 # psound
 
+A Weechat script that plays a soundfile for incoming messages.
+
 ## LOADING
 
 ### MANUALLY
@@ -29,9 +31,10 @@ The script can be configured through two options:
 
 The script implements three actions:
 
-* test: tests the current settings by trying to play `sound_file` with `player`.
+* test: Test the current settings by trying to play `sound_file` with `player`.
 * on [buffer]: Enable sound notifications for `buffer`.
 * off [buffer]: Disable sound notifications for `buffer`.
+* list: Print the list of muted buffers.
 
 ## NOTES
 
