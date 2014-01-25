@@ -1,6 +1,6 @@
 #encoding: utf-8
 
-# Copyright (c) 2013, Sylvain LAPERCHE <sylvain.laperche@gmail.com>
+# Copyright (c) 2013-2014, Sylvain LAPERCHE <sylvain.laperche@gmail.com>
 # All rights reserved.
 # License: BSD 3-Clause (http://opensource.org/licenses/BSD-3-Clause)
 
