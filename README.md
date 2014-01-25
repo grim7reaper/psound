@@ -49,3 +49,9 @@ The script implements three actions:
 http://www.weechat.org/files/doc/stable/weechat\_scripting.en.html
 
 http://www.weechat.org/files/doc/stable/weechat\_plugin\_api.en.html
+
+## LICENSE
+
+This software is licensed under the BSD3 license.
+
+© 2013-2014 Sylvain Laperche sylvain.laperche@gmail.com.
