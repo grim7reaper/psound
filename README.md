@@ -2,15 +2,15 @@
 
 A Weechat script that plays a soundfile for incoming messages.
 
-## LOADING
+## Loading
 
-### MANUALLY
+### Manually
 
 Type the following command in Weechat:
 
     /ruby load path/to/psound.rb
 
-### AUTOLOADING
+### Autoloading
 
 If you want autoload the script when WeeChat is starting, you can run the
 following commands:
@@ -18,7 +18,7 @@ following commands:
     cd ~/.weechat/ruby/autoload
     ln -s path/to/psound.rb
 
-## SETTINGS
+## Settings
 
 The script can be configured through two options:
 
@@ -27,7 +27,7 @@ The script can be configured through two options:
 * plugins.var.ruby.psound.sound\_file: path to the sound file to play
   (default: unset).
 
-## ARGUMENTS
+## Arguments
 
 The script implements three actions:
 
@@ -36,7 +36,7 @@ The script implements three actions:
 * off [buffer]: Disable sound notifications for `buffer`.
 * list: Print the list of muted buffers.
 
-## NOTES
+## Notes
 
 * By default, sound notifications is enabled for all channel buffers.
 * When you need to provide a buffer name, it is better to use the completion
@@ -44,13 +44,13 @@ The script implements three actions:
 * If you do not provide a buffer name, the command is applied on the current
   buffer.
 
-## REFERENCES
+## References
 
 http://www.weechat.org/files/doc/stable/weechat\_scripting.en.html
 
 http://www.weechat.org/files/doc/stable/weechat\_plugin\_api.en.html
 
-## LICENSE
+## License
 
 This software is licensed under the BSD3 license.
 
